@@ -5,14 +5,14 @@
 
 using namespace std;
 
-// Структура для узла односвязного списка
+// РЎС‚СЂСѓРєС‚СѓСЂР° РґР»СЏ СѓР·Р»Р° РѕРґРЅРѕСЃРІСЏР·РЅРѕРіРѕ СЃРїРёСЃРєР°
 struct Node {
     int data;
     Node* next;
     Node(int value) : data(value), next(nullptr) {}
 };
 
-// Функция для слияния двух упорядоченных односвязных списков
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ СЃР»РёСЏРЅРёСЏ РґРІСѓС… СѓРїРѕСЂСЏРґРѕС‡РµРЅРЅС‹С… РѕРґРЅРѕСЃРІСЏР·РЅС‹С… СЃРїРёСЃРєРѕРІ
 Node* mergeSortedLists(Node* l1, Node* l2) {
     if (!l1) return l2;
     if (!l2) return l1;
@@ -30,7 +30,7 @@ Node* mergeSortedLists(Node* l1, Node* l2) {
     return result;
 }
 
-// Класс для реализации стека на односвязном списке
+// РљР»Р°СЃСЃ РґР»СЏ СЂРµР°Р»РёР·Р°С†РёРё СЃС‚РµРєР° РЅР° РѕРґРЅРѕСЃРІСЏР·РЅРѕРј СЃРїРёСЃРєРµ
 class Stack {
 private:
     Node* top;
@@ -72,7 +72,7 @@ public:
     }
 };
 
-// Функция для обхода графа в глубину
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕР±С…РѕРґР° РіСЂР°С„Р° РІ РіР»СѓР±РёРЅСѓ
 void depthFirstTraversal(vector<vector<int>>& graph, int start, vector<bool>& visited) {
     Stack stack;
     stack.push(start);
@@ -94,7 +94,7 @@ void depthFirstTraversal(vector<vector<int>>& graph, int start, vector<bool>& vi
     cout << endl;
 }
 
-// Функция для обхода графа в ширину
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕР±С…РѕРґР° РіСЂР°С„Р° РІ С€РёСЂРёРЅСѓ
 void breadthFirstTraversal(vector<vector<int>>& graph, int start, vector<bool>& visited) {
     queue<int> q;
     q.push(start);
@@ -118,7 +118,7 @@ void breadthFirstTraversal(vector<vector<int>>& graph, int start, vector<bool>& 
     cout << endl;
 }
 
-// Функция для топологической сортировки вершин графа
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ С‚РѕРїРѕР»РѕРіРёС‡РµСЃРєРѕР№ СЃРѕСЂС‚РёСЂРѕРІРєРё РІРµСЂС€РёРЅ РіСЂР°С„Р°
 void topologicalSortUtil(vector<vector<int>>& graph, int vertex, vector<bool>& visited, stack<int>& s) {
     visited[vertex] = true;
 
@@ -151,7 +151,7 @@ void topologicalSort(vector<vector<int>>& graph) {
 }
 
 int main() {
-    // (a) Слияние двух упорядоченных односвязных списков
+    // (a) РЎР»РёСЏРЅРёРµ РґРІСѓС… СѓРїРѕСЂСЏРґРѕС‡РµРЅРЅС‹С… РѕРґРЅРѕСЃРІСЏР·РЅС‹С… СЃРїРёСЃРєРѕРІ
     Node* list1 = new Node(2);
     list1->next = new Node(8);
     list1->next->next = new Node(10);
@@ -168,7 +168,7 @@ int main() {
     }
     cout << endl;
 
-    // (b) Реализация стека на односвязном списке
+    // (b) Р РµР°Р»РёР·Р°С†РёСЏ СЃС‚РµРєР° РЅР° РѕРґРЅРѕСЃРІСЏР·РЅРѕРј СЃРїРёСЃРєРµ
     Stack stackExample;
     stackExample.push(15);
     stackExample.push(25);
@@ -180,7 +180,7 @@ int main() {
     }
     cout << endl;
 
-    // (c) Обход графа в глубину и в ширину
+    // (c) РћР±С…РѕРґ РіСЂР°С„Р° РІ РіР»СѓР±РёРЅСѓ Рё РІ С€РёСЂРёРЅСѓ
     int numVertices;
     cout << "Enter the number of vertices in the graph: ";
     cin >> numVertices;
@@ -207,7 +207,7 @@ int main() {
     visitedVertices.assign(numVertices, false);
     breadthFirstTraversal(adjacencyMatrix, startVertex, visitedVertices);
 
-    // (d) Топологическая сортировка вершин графа
+    // (d) РўРѕРїРѕР»РѕРіРёС‡РµСЃРєР°СЏ СЃРѕСЂС‚РёСЂРѕРІРєР° РІРµСЂС€РёРЅ РіСЂР°С„Р°
     topologicalSort(adjacencyMatrix);
 
     return 0;
